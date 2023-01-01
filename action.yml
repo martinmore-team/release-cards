@@ -1,0 +1,19 @@
+name: 'Release Card'
+description: 'Generates a release card'
+inputs:
+  version:
+    description: 'Version number'
+    required: true
+  contributor:
+    description: 'Contributor name'
+    required: true
+  description_base64:
+    description: 'Release description (base64 encoded)'
+    required: true
+runs:
+  using: 'docker'
+  image: 'docker://mmorepan/release-cards:main'
+  args:
+    - ${{ inputs.version }}
+    - ${{ inputs.contributor }}
+    - ${{ inputs.description_base64 }}

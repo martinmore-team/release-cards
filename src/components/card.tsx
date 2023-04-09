@@ -8,11 +8,12 @@ type Props = {
   version: string;
   description: string;
   contributor: string;
+  repoName: string;
 };
 
-export const Card = ({ version, description, contributor }: Props) => (
+export const Card = ({ version, description, contributor, repoName }: Props) => (
   <div className="card p-8 flex flex-col">
-    <ReleaseTitle version={version} />
+    <ReleaseTitle version={version} repoName={repoName} />
 
     <div className="flex-1 flex">
       <div className="flex-1 flex flex-col">

@@ -10,6 +10,9 @@ inputs:
   description_base64:
     description: 'Release description (base64 encoded)'
     required: true
+  repo_name:
+    description: 'Repository name'
+    required: false
 runs:
   using: 'docker'
   image: 'docker://mmorepan/release-cards:main'
@@ -17,3 +20,4 @@ runs:
     - ${{ inputs.version }}
     - ${{ inputs.contributor }}
     - ${{ inputs.description_base64 }}
+    - ${{ inputs.repo_name }}

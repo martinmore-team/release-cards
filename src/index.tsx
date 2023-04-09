@@ -10,7 +10,12 @@ Hello, this is an example short description
 
   return (
     <React.StrictMode>
-      <Card version="1.0" contributor="Jake" description={description} />
+      <Card 
+        version="1.0"
+        contributor="More"
+        description={description}
+        repoName="Prueba1"
+      />
     </React.StrictMode>
   );
 };
@@ -23,11 +28,13 @@ module.exports.renderCard = (data: {
   version: string;
   contributor: string;
   description: string;
+  repoName: string;
 }) =>
   ReactDOMServer.renderToStaticMarkup(
     <Card
       version={data.version}
       contributor={data.contributor}
       description={data.description}
+      repoName={data.repoName}
     />
   );

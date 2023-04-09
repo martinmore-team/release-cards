@@ -9,7 +9,7 @@ const outputPath = path.resolve(
   path.join(process.env.GITHUB_WORKSPACE || "", "screenshot.png")
 );
 
-const [version, contributor, descriptionEncoded] = process.argv.slice(2);
+const [version, contributor, descriptionEncoded, repoName] = process.argv.slice(2);
 
 const buff = Buffer.from(descriptionEncoded, "base64");
 const description = buff.toString("utf8");
@@ -33,6 +33,7 @@ function fileExists(file) {
       version,
       contributor,
       description,
+      repoName,
     })
   );
 
